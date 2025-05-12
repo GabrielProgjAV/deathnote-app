@@ -1,0 +1,103 @@
+Death Note App — Proyecto Final Programacion avanzada
+
+Aplicación Full Stack inspirada en Death Note. Permite registrar personas, programar su muerte automáticamente y mostrar su estado (vivo o muerto) con lógica basada en el cuaderno de la serie.
+
+ Reglas implementadas
+
+Si no se escribe una causa de muerte, la persona muere de un ataque al corazón en 40 segundos.
+
+ Si se especifica una causa, se tienen 6 minutos y 40 segundos para escribir los detalles.
+
+ La persona muere 40 segundos después de agregar los detalles.
+
+ Si no se sube una foto, la persona no muere.
+
+ Las personas muertas se visualizan en el frontend con estado "muerto".
+
+ Tecnologías usadas
+
+Backend: Go + GORM + PostgreSQL
+
+ Docker: para contenerización y base de datos
+
+Frontend: React + Vite
+
+Pruebas: go test con lógica de TaskQueue
+
+ Cómo ejecutar el proyecto
+
+ Backend (Docker)
+
+Clona el backend:
+
+git clone https://github.com/tuusuario/backend-avanzada-go
+cd backend-avanzada-go
+
+Crea el archivo .env:
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=admin
+POSTGRES_DB=backend-avanzada
+POSTGRES_HOST=postgres
+
+Asegúrate de tener la carpeta uploads/:
+
+mkdir uploads
+
+Ejecuta el backend:
+
+docker compose up --build
+
+Esto inicia la API REST en http://localhost:8000
+
+Ejecutar pruebas
+
+Desde la carpeta backend-avanzada-go/server:
+
+go test
+
+Pruebas incluidas:
+
+Muerte sin causa en 40s
+
+Muerte con causa + detalles
+
+Personas sin foto no mueren
+
+Frontend (React)
+
+Clona el frontend:
+
+git clone https://github.com/tuusuario/deathnote-frontend
+cd deathnote-frontend
+
+Instala las dependencias:
+
+npm install
+
+Ejecuta la aplicación:
+
+npm run dev
+
+Se abrirá en http://localhost:5173
+
+📷 Funcionalidad
+
+Registrar persona con nombre, edad, foto, causa y detalles
+
+Ver lista de personas con estado actualizado
+
+Las muertes se reflejan automáticamente cada 10 segundos
+
+Eliminar personas desde el frontend
+
+Subida de foto al servidor (carpeta /uploads)
+
+
+
+Desarrollado por [Gabriel Ramos Rojas ] para la materia prog Avanzada (2025).
+
+Estado del proyecto
+
+
+
